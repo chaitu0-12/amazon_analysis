@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amazon Review Sentiment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Amazon Review Sentiment Analyzer</h1>
+        <form method="POST">
+            <textarea name="review" placeholder="Enter your review here..." required></textarea><br>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+
+        {% if sentiment %}
+        <div class="result" style="color: {{ color }};">
+            Sentiment: {{ sentiment }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
